@@ -5,14 +5,7 @@ This project demonstrates how to set up **Redux using Redux Toolkit** from scrat
 
 ## 📁 Folder Structure
 
-src/
-├── redux/
-│ ├── store.ts
-│ └── slices/
-│ ├── themeSlice.ts
-│ └── userSlice.ts
-├── App.tsx
-└── main.tsx
+<pre> ```txt src/ ├── redux/ │ ├── store.ts │ └── slices/ │ ├── themeSlice.ts │ └── userSlice.ts ├── App.tsx └── main.tsx ``` </pre>
 
 
 ---
@@ -28,8 +21,8 @@ npm install @reduxjs/toolkit react-redux
 ```
 ### ✅ store.ts
 
-First make a store.ts file and create store
-import configureStore from redux toolkit and then make and export store 
+First make a store.ts file and create store by
+importing configureStore from redux toolkit and then make and export store 
 inside configureStore we can add reducers we will add that later
 
 ```bash
@@ -38,4 +31,6 @@ export const store=configureStore({
     reducer:{
 
     }
-});```
+});
+```
+
