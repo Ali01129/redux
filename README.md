@@ -41,3 +41,25 @@ export const store=configureStore({
 });
 ```
 
+### ✅ main.ts
+now we will import store that we have created in redux folder and provider from react-redux and wrap our app with provider and pass store.
+
+```bash
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.tsx'
+import { Provider } from 'react-redux';
+import {store} from './redux/store.ts';
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </StrictMode>,
+)
+```
+
+### 📁 Slice
