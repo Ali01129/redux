@@ -2,6 +2,7 @@
 
 This project demonstrates how to set up **Redux using Redux Toolkit** from scratch in a React project.
 
+---
 
 ## 📁 Folder Structure
 ```bash
@@ -63,3 +64,56 @@ createRoot(document.getElementById('root')!).render(
 ```
 
 ### 📁 Slice
+
+import createSlice from redux toolit and make initial state then pass name,initial state and reducers in the createSlice. In the reducers we will create method that will do state update. For example in our case its changing theme from black to white.
+
+```bash
+import { createSlice } from "@reduxjs/toolkit";
+
+let initialState:string='black';
+
+const themeSlice=createSlice({
+    name:'theme',
+    initialState,
+    reducers:{
+        changeTheme:(state)=>{
+            if(state=="black"){
+               return state='white';
+            }
+            else{
+                return state='black'
+            }
+        }
+    }
+});
+
+export const {changeTheme}=themeSlice.actions;
+export default themeSlice.reducer;
+```
+
+After making slice we will have to put that slice in the store by giving it name that why we are exporting ThemeSlice.reducer.
+
+### ✅ Using and Updating State
+
+we will use useDispatch and use useSelector hooks to fetch and update themestate.
+
+To get the theme state we will use useSelector() hook.
+```bash
+import { useSelector } from 'react-redux';
+type RootState = ReturnType<typeof store.getState>;
+//for typescirpt we need this RootState for defining the type
+let theme=useSelector((state:RootState)=>state.theme);
+```
+
+To change the state we have to use useDispatch() hook.
+```bash
+import { useDispatch } from 'react-redux';
+import { changeTheme } from './redux/slices/themeSlice';
+//we have to import changeTheme function form themeSlice.ts file
+
+//inside function use the hook
+const dispath=useDispatch();
+
+//then we can call this with use event like on button click
+dispath(changeTheme())
+```
