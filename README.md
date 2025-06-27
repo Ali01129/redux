@@ -4,9 +4,16 @@ This project demonstrates how to set up **Redux using Redux Toolkit** from scrat
 
 
 ## 📁 Folder Structure
-
-<pre> ```txt src/ ├── redux/ │ ├── store.ts │ └── slices/ │ ├── themeSlice.ts │ └── userSlice.ts ├── App.tsx └── main.tsx ``` </pre>
-
+```bash
+src/
+├── redux/
+│ ├── store.ts
+│ └── slices/
+│ ├── themeSlice.ts
+│ └── userSlice.ts
+├── App.tsx
+└── main.tsx
+```
 
 ---
 
